@@ -1,0 +1,51 @@
+version: '3.7'
+services:
+  postgres-pessoa:
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=GMT
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data_pedido:/var/lib/postgresql/data
+
+  postgres-estoque:
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=GMT
+    ports:
+      - 5433:5433
+    volumes:
+      - postgres_data_estoque:/var/lib/postgresql/data
+
+  postgres-pedido:
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=GMT
+    ports:
+      - 5434:5434
+    volumes:
+      - postgres_data_pedido:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3.8.22-management
+    ports:
+      - "5672:5672" # Porta padrão para conexão AMQP
+      - "15672:15672" # Porta da interface web de gerenciamento
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest" # Usuário padrão
+      RABBITMQ_DEFAULT_PASS: "guest" # Senha padrão
+
+volumes:
+  postgres_data_estoque:
+  postgres_data_pessoa:
+  postgres_data_pedido:
