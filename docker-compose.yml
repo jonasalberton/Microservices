@@ -20,7 +20,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - TZ=GMT
     ports:
-      - 5432:5433
+      - 5433:5432
     volumes:
       - postgres_data_estoque:/var/lib/postgresql/data
 
@@ -32,7 +32,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - TZ=GMT
     ports:
-      - 5432:5434
+      - 5434:5432
     volumes:
       - postgres_data_pedido:/var/lib/postgresql/data
 
