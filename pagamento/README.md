@@ -1,5 +1,8 @@
 # Microservice - Pagamento
 
 # Como rodar
-- npm run i 
-- npm run dev
+
+no diretorio ```/pagamento```
+
+- instalar dependencias ``` npm run i``` 
+- executar servico de pagamento ```npm run dev```

@@ -1,7 +1,10 @@
 # Microservice - Estoque
 
 # Como rodar
-- npm run i 
-- npm run migrate:dev
-- npm run seed
-- npm run dev
+
+no diretorio ```/estoque```
+
+- instalar dependencias ``` npm run i``` 
+- rodar migrations ```npm run migrate:dev```
+- inserir dados no banco ```npm run seed```
+- executar servico de estoque ```npm run dev```

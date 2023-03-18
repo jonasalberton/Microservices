@@ -24,18 +24,6 @@ services:
     volumes:
       - postgres_data_estoque:/var/lib/postgresql/data
 
-  postgres-pedido:
-    image: postgres:10
-    environment:
-      - POSTGRES_DB=dev
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - TZ=GMT
-    ports:
-      - 5434:5432
-    volumes:
-      - postgres_data_pedido:/var/lib/postgresql/data
-
   rabbitmq:
     image: rabbitmq:3.8.22-management
     ports:
