@@ -15,7 +15,6 @@ public class PessoaController {
     @Autowired
     private PessoaRepository pessoaRepository;
 
-    // Criação de uma pessoa
     @PostMapping()
     public ResponseEntity<Pessoa> createPessoa(@RequestBody Pessoa pessoa) {
         try {
@@ -26,7 +25,6 @@ public class PessoaController {
         }
     }
 
-    // Busca de pessoa por ID
     @GetMapping("/{id}")
     public ResponseEntity<Pessoa> getPessoaById(@PathVariable("id") long id) {
         Optional<Pessoa> pessoaData = pessoaRepository.findById(id);

@@ -16,10 +16,10 @@ public class Pedido implements Serializable {
     private Integer quantidade;
 
     @Column(name = "id_produto")
-    private Integer idProduto;
+    private String idProduto;
 
     @Column(name = "id_pessoa")
-    private Integer idPessoa;
+    private Long idPessoa;
 
     @Column(name = "status")
     private String status;
@@ -30,7 +30,7 @@ public class Pedido implements Serializable {
     public Pedido() {
     }
 
-    public Pedido(Integer quantidade, Integer idProduto, Integer idPessoa) {
+    public Pedido(Integer quantidade, String idProduto, Long idPessoa) {
         this.quantidade = quantidade;
         this.idProduto = idProduto;
         this.idPessoa = idPessoa;
@@ -52,19 +52,19 @@ public class Pedido implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public Integer getIdProduto() {
+    public String getIdProduto() {
         return idProduto;
     }
 
-    public void setIdProduto(Integer idProduto) {
+    public void setIdProduto(String idProduto) {
         this.idProduto = idProduto;
     }
 
-    public Integer getIdPessoa() {
+    public Long getIdPessoa() {
         return idPessoa;
     }
 
-    public void setIdPessoa(Integer idPessoa) {
+    public void setIdPessoa(Long idPessoa) {
         this.idPessoa = idPessoa;
     }
 
