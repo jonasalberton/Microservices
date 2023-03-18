@@ -6,7 +6,7 @@ interface PagamentoInit {
   idPessoa: number,
   idProduto: string,
   quantidade: number
-  tipoPagamento: 'pix' | 'cartao'
+  tipoPagamento: 'PIX' | 'CARTAO'
 }
 
 interface PagamentoStatus {
@@ -30,7 +30,7 @@ function sendBaixaEstoque(ba: BaixaEstoque) {
 function onPagamentoStarted({content}: any) {
   const pagamento: PagamentoInit = JSON.parse(content);
 
-  if (pagamento.tipoPagamento === 'pix') {
+  if (pagamento.tipoPagamento === 'PIX') {
     sendBaixaEstoque({idProduto: pagamento.idProduto, quantidade: pagamento.quantidade})
     sendPagamentoStatus({ idPedido: pagamento.idPedido, status: 'APROVADO'})
     return;
