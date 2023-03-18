@@ -18,7 +18,7 @@ function createQueue(channel: amqplib.Channel , queue: string){
 export function sendToQueue(queue: string, message: any){
   connect()
     .then(channel => createQueue(channel, queue))
-    .then(channel => (channel as amqplib.Channel).sendToQueue(queue, Buffer.from(JSON.stringify(message))))
+    .then(channel => (channel as amqplib.Channel).sendToQueue(queue, Buffer.from(JSON.stringify(message)), { contentType: 'application/json'} ))
     .catch(err => console.log(err))
 }
 export function consume(queue: string, callback: (data: any) => void){

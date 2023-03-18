@@ -23,14 +23,14 @@ public class RabbitMQConfig {
     @Value("${pagamento-status.rabbitmq.queue}")
     private String pagamentoStatusQueue;
 
-    @Bean
-    public SimpleMessageListenerContainer messageListenerContainer(ConnectionFactory connectionFactory, PagamentoStatusConsumer pagamentoStatusConsumer, Jackson2JsonMessageConverter jackson2JsonMessageConverter) {
-        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-        container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(pagamentoStatusQueue);
-        container.setMessageListener(new MessageListenerAdapter(pagamentoStatusConsumer, jackson2JsonMessageConverter));
-        return container;
-    }
+//    @Bean
+//    public SimpleMessageListenerContainer messageListenerContainer(ConnectionFactory connectionFactory, PagamentoStatusConsumer pagamentoStatusConsumer, Jackson2JsonMessageConverter jackson2JsonMessageConverter) {
+//        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+//        container.setConnectionFactory(connectionFactory);
+//        container.setQueueNames(pagamentoStatusQueue);
+//        container.setMessageListener(new MessageListenerAdapter(pagamentoStatusConsumer, jackson2JsonMessageConverter));
+//        return container;
+//    }
 
     @Bean
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter() {
