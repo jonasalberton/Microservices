@@ -1,11 +1,9 @@
 import { FastifyInstance } from "fastify";
 import { prisma } from "./lib/prisma";
 import { z } from "zod";
-import { sendToQueue} from './lib/queue';
 
 export async function appRoutes(app: FastifyInstance) {
   app.get("/produtos", async (req, res) => {
-    sendToQueue("add-user", { name: 'teste'});
     return await prisma.produto.findMany();
   });
 
